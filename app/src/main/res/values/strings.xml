@@ -8,4 +8,23 @@
     <string name="input_teacher_phone">Teacher Phone</string>
 
     <string name="main_dashboard">Dashboard</string>
+
+    <string name="subject_heading">Subjects</string>
+    <string name="subject_1">Maths</string>
+    <string name="subject_2">Sinhala</string>
+    <string name="subject_3">English</string>
+    <string name="subject_4">Tamil</string>
+    <string name="subject_5">Religion</string>
+    <string name="subject_6">Music</string>
+
+    <string name="grade">Choose a Grade</string>
+
+    <string-array name="grade_arrays">
+        <item>kindergarten</item>
+        <item>Grade 1</item>
+        <item>Grade 2</item>
+        <item>Grade 3</item>
+        <item>Grade 4</item>
+        <item>Grade 5</item>
+    </string-array>
 </resources>

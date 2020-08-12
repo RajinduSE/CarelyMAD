@@ -69,23 +69,6 @@
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <EditText
-        android:id="@+id/insertGarde"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_grade_24"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="@string/input_grade"
-        android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSchool" />
-
-    <EditText
         android:id="@+id/insertClassTeacher"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -100,7 +83,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/insertGarde" />
+        app:layout_constraintTop_toBottomOf="@+id/inputSchool" />
 
     <EditText
         android:id="@+id/insertSchoolPhone"
