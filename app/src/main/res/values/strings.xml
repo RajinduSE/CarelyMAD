@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Caring</string>
+    <string name="school_heading">School</string>
+    <string name="input_school_name">School Name</string>
+    <string name="input_grade">Grade</string>
+    <string name="input_class_teacher">Class Teacher Name</string>
+    <string name="input_school_phone">School Phone</string>
+    <string name="input_teacher_phone">Teacher Phone</string>
+
+    <string name="main_dashboard">Dashboard</string>
+</resources>
