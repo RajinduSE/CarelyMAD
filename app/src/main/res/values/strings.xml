@@ -37,4 +37,22 @@
     <string name="marks_heading">Marks</string>
     <string name="Mark">Enter Mark</string>
 
+    <string name="health_heading">Health Care</string>
+    <string name="insert_weight">Weight</string>
+    <string name="insert_height">Height</string>
+    <string name="insert_doctor1">Doctor</string>
+    <string name="insert_specialization">Specialization</string>
+    <string name="insert_doctor2">Doctor</string>
+    <string name="insert_specialization2">Specialization</string>
+
+    <string name="health_dashboard">Dashboard</string>
+    <string name="health_medics">Medics</string>
+
+    <string name="insert_medicine">Medicine</string>
+    <string name="insert_time">Time</string>
+    <string name="insert_AtaTime">At a Time</string>
+    <string name="insert_description">Description</string>
+
+    <string name="health_injection">Vaccines</string>
+    <string name="insert_birthday">Birth Date</string>
 </resources>
