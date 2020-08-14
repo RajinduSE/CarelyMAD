@@ -44,6 +44,6 @@
     <string name="insert_AtaTime">At a Time</string>
     <string name="insert_description">Description</string>
 
-    <string name="health_injection">Injections</string>
+    <string name="health_injection">Vaccines</string>
     <string name="insert_birthday">Birth Date</string>
 </resources>
