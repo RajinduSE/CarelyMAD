@@ -17,7 +17,13 @@
         <activity android:name=".InsertSubject" />
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
+        
+        <activity android:name=".EducationDashboard"></activity>
+        <activity android:name=".DeleteGrade" />
+        <activity android:name=".UpdateSchool" />
+        <activity android:name=".InsertMarks" />
         <activity android:name=".MainActivity">
+       
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
