@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), EducationDashboard.class);
+                Intent intent = new Intent(getApplicationContext(), InsertSubject.class);
                 startActivity(intent);
             }
         });
