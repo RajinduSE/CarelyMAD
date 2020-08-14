@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">Caring</string>
+    <string name="Education">Education</string>
     <string name="school_heading">School</string>
     <string name="input_school_name">School Name</string>
     <string name="input_grade">Grade</string>
     <string name="input_class_teacher">Class Teacher Name</string>
     <string name="input_school_phone">School Phone</string>
     <string name="input_teacher_phone">Teacher Phone</string>
+    <string name="Update_school">Change School</string>
+    <string name="delete_grade">Remove Grade</string>
 
     <string name="main_dashboard">Dashboard</string>
 
@@ -15,7 +18,10 @@
     <string name="subject_3">English</string>
     <string name="subject_4">Tamil</string>
     <string name="subject_5">Religion</string>
-    <string name="subject_6">Music</string>
+    <string name="subject_6">ENV</string>
+    <string name="subject_7">Dancing</string>
+    <string name="subject_8">Music</string>
+    <string name="subject_9">Art</string>
 
     <string name="grade">Choose a Grade</string>
 
@@ -27,6 +33,9 @@
         <item>Grade 4</item>
         <item>Grade 5</item>
     </string-array>
+
+    <string name="marks_heading">Marks</string>
+    <string name="Mark">Enter Mark</string>
 
     <string name="health_heading">Health Care</string>
     <string name="insert_weight">Weight</string>
