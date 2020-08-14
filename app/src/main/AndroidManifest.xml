@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InsertSubject"></activity>
+        <activity android:name=".Medics"></activity>
+        <activity android:name=".InsertSubject" />
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
         <activity android:name=".MainActivity">
