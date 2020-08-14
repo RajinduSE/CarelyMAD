@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InsertSubject"></activity>
+        <activity android:name=".EducationDashboard"></activity>
+        <activity android:name=".DeleteGrade" />
+        <activity android:name=".UpdateSchool" />
+        <activity android:name=".InsertMarks" />
+        <activity android:name=".InsertSubject" />
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
         <activity android:name=".MainActivity">
