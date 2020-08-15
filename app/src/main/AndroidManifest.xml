@@ -17,10 +17,12 @@
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
         
-        <activity android:name=".EducationDashboard"></activity>
-        <activity android:name=".DeleteGrade" />
-        <activity android:name=".UpdateSchool" />
-        <activity android:name=".InsertMarks" />
+        ndroid:name=".Achievement"></activity>
+        <activity android:name=".ViewMedicine" />
+        <activity android:name=".InsertHealth" />
+        <activity android:name=".InjectionCourse" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Medics" />
         <activity android:name=".MainActivity">
        
             <intent-filter>
