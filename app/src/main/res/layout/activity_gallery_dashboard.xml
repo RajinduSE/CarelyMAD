@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainDashboard">
+    tools:context=".EducationDashboard">
 
     <View
         android:id="@+id/topView"
@@ -19,13 +19,15 @@
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/wave"
         app:layout_constraintBottom_toTopOf="@+id/list_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topView" />
+        app:layout_constraintTop_toBottomOf="@+id/topView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/topText"
@@ -33,15 +35,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:text="@string/main_dashboard"
+        android:autofillHints="no"
+        android:text="@string/achievement_dashboard"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/topView"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="no"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -55,11 +57,10 @@
         app:srcCompat="@drawable/logo" />
 
     <ListView
-    android:id="@+id/list_view"
-    android:layout_width="0dp"
-    android:layout_height="483dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
-
+        android:id="@+id/list_view"
+        android:layout_width="0dp"
+        android:layout_height="483dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
