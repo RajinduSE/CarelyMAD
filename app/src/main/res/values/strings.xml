@@ -61,6 +61,7 @@
 
     <string name="health_vaccine">Vaccines</string>
     <string name="health_viewHealth">Details</string>
+    <string name="health_registration">Sign Up</string>
 
     <string name="AB">--------------------------------------------------AB------------------------------------------------------------</string>
 
@@ -98,4 +99,6 @@
     <string name="Update_start">startTime</string>
     <string name="Update_end">endTime</string>
     <string name="Update_subject">subject</string>
+    <string name="view_heading">All tasks</string>
+
 </resources>
