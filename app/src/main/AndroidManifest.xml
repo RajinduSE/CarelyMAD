@@ -9,20 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EducationDashboard"></activity>
+        <activity android:name=".ViewAchievement"></activity>
+        <activity android:name=".ViewEducation" />
+        <activity android:name=".GalleryDashboard" />
+        <activity android:name=".RemoveAchievement" />
+        <activity android:name=".UpdateAchievements" />
+        <activity android:name=".AchievementGallery" />
+        <activity android:name=".EducationDashboard" />
         <activity android:name=".DeleteGrade" />
         <activity android:name=".UpdateSchool" />
         <activity android:name=".InsertMarks" />
         <activity android:name=".InsertSubject" />
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
-        
-        <activity android:name=".EducationDashboard"></activity>
-        <activity android:name=".DeleteGrade" />
-        <activity android:name=".UpdateSchool" />
-        <activity android:name=".InsertMarks" />
+
+        <activity android:name=".ViewMedicine" />
+        <activity android:name=".InsertHealth" />
+        <activity android:name=".InjectionCourse" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Medics" />
+
         <activity android:name=".MainActivity">
-       
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

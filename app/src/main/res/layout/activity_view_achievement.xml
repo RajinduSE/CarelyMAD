@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeleteGrade">
+    tools:context=".EducationDashboard">
 
     <View
         android:id="@+id/topView"
@@ -19,11 +19,15 @@
     <View
         android:id="@+id/view2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/wave"
+        app:layout_constraintBottom_toTopOf="@+id/list_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topView" />
+        app:layout_constraintTop_toBottomOf="@+id/topView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/topText"
@@ -32,9 +36,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:autofillHints="no"
-        android:text="@string/delete_grade"
+        android:text="@string/view_Ach"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/topView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -52,31 +56,55 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="100dp"
-        android:entries="@array/grade_arrays"
-        android:prompt="@string/grade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
-
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="172dp"
         android:background="@drawable/round_button"
-        android:text="Remove"
+        android:text="Change"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="179dp"
+        android:layout_height="151dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:srcCompat="@drawable/gallery2" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/insert_description2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="My Son has got 2nd place in his kindergarten elocution exam"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.325" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

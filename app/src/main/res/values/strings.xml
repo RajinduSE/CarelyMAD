@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Caring</string>
+    <string name="rajindu">---------------------------------Rajindu--------------------------------------</string>
     <string name="Education">Education</string>
     <string name="school_heading">School</string>
     <string name="input_school_name">School Name</string>
@@ -9,6 +10,7 @@
     <string name="input_teacher_phone">Teacher Phone</string>
     <string name="Update_school">Change School</string>
     <string name="delete_grade">Remove Grade</string>
+    <string name="view_Edu">Education Details</string>
 
     <string name="main_dashboard">Dashboard</string>
 
@@ -37,15 +39,16 @@
     <string name="marks_heading">Marks</string>
     <string name="Mark">Enter Mark</string>
 
+    <string name="dilmi">-----------------------------------------Dilmi---------------------------------------------</string>
     <string name="health_heading">Health Care</string>
     <string name="insert_weight">Weight</string>
     <string name="insert_height">Height</string>
     <string name="insert_doctor1">Doctor</string>
-    <string name="insert_specialization">Specialization</string>
-    <string name="insert_doctor2">Doctor</string>
+    <string name="insert_condition">Health Condition</string>
+    <string name="insert_allergies">Allergies</string>
     <string name="insert_specialization2">Specialization</string>
 
-    <string name="health_dashboard">Dashboard</string>
+    <string name="health_dashboard">Health</string>
     <string name="health_medics">Medics</string>
 
     <string name="insert_medicine">Medicine</string>
@@ -55,4 +58,44 @@
 
     <string name="health_injection">Vaccines</string>
     <string name="insert_birthday">Birth Date</string>
+
+    <string name="health_vaccine">Vaccines</string>
+    <string name="health_viewHealth">Details</string>
+
+    <string name="AB">--------------------------------------------------AB------------------------------------------------------------</string>
+
+    <string name="health_achievement">Achievements</string>
+    <string name="insert_event">Event</string>
+    <string name="insert_description2">Description</string>
+    <string name="insert_award">Awards</string>
+    <string name="insert_date2">Date</string>
+    <string name="gallery">Achievement List</string>
+    <string name="achievement_update">Update Achievement</string>
+    <string name="event_ex">Sportmeet 2019</string>
+    <string name="event_des">Running 100m</string>
+    <string name="award_event">Silver Medal</string>
+    <string name="delete_achievement">Remove Achievement</string>
+    <string name="achievement">Achievement</string>
+    <string name="view_Ach">Achievement Details</string>
+
+
+    <string-array name="achievement_arrays">
+        <item>Sportmeet 2019</item>
+        <item>Prize Giving 2020</item>
+
+    </string-array>
+    <string name="achievement_dashboard">Achievement</string>
+
+    <string name="dilumi">-----------------------------------------------Dilumi-----------------------------------------------</string>
+    <string name="timetable_heading">Add Task</string>
+    <string name="insert_date">date</string>
+    <string name="insert_start">startTime</string>
+    <string name="insert_end">endTime</string>
+    <string name="insert_subject">subject</string>
+
+    <string name="Update_heading">Let us Update</string>
+    <string name="Update_date">date</string>
+    <string name="Update_start">startTime</string>
+    <string name="Update_end">endTime</string>
+    <string name="Update_subject">subject</string>
 </resources>

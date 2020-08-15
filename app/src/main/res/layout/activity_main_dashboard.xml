@@ -55,11 +55,11 @@
         app:srcCompat="@drawable/logo" />
 
     <ListView
-        android:id="@+id/list_view"
-        android:layout_width="0dp"
-        android:layout_height="483dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:id="@+id/list_view"
+    android:layout_width="0dp"
+    android:layout_height="483dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
