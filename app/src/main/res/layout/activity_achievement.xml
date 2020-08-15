@@ -4,8 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InsertHealth">
+    tools:context=".Achievement">
 
+    <Button
+        android:id="@+id/health_add_achievement"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/round_button"
+        android:text="Add"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDate" />
 
     <View
         android:id="@+id/topView"
@@ -20,7 +35,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="417dp"
-        android:layout_height="78dp"
+        android:layout_height="70dp"
         android:background="@drawable/wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +48,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:autofillHints="no"
-        android:text="@string/health_heading"
+        android:text="@string/health_achievement"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -48,121 +63,93 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-
     <EditText
-        android:id="@+id/inputWeight"
+        android:id="@+id/inputEvent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_accessibility_new_24"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_weight"
+        android:hint="@string/insert_event"
         android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-
     <EditText
-        android:id="@+id/inputHeight"
+        android:id="@+id/inputDate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_accessibility_new_24"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_height"
+        android:hint="@string/insert_date2"
         android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputWeight" />
-
+        app:layout_constraintTop_toBottomOf="@+id/inputAwards" />
 
     <EditText
-        android:id="@+id/inputDoctor"
+        android:id="@+id/inputDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/steth"
+        android:drawableStart="@drawable/notepad"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_doctor1"
-        android:inputType="text"
+        android:hint="@string/insert_description2"
+        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputHeight" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEvent" />
 
     <EditText
-        android:id="@+id/inputSpecialization"
+        android:id="@+id/inputAwards"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_bookmark_border_24"
+        android:drawableStart="@drawable/trophy"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_condition"
-        android:inputType="text"
+        android:hint="@string/insert_award"
+        android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDoctor" />
-
-
-    <EditText
-        android:id="@+id/inputDoctor2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_child_care_24"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="@string/insert_allergies"
-        android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputSpecialization" />
-
+        app:layout_constraintTop_toBottomOf="@+id/inputDescription" />
 
     <Button
-        android:id="@+id/health_add_btn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/round_button"
-        android:text="Add"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:id="@+id/button8"
+        android:layout_width="171dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="24dp"
+        android:drawableStart="@drawable/ic_baseline_arrow_upward_24"
+        android:text="Upload Photo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDoctor2" />
+        app:layout_constraintTop_toBottomOf="@+id/health_add_achievement" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
