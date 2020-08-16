@@ -100,5 +100,6 @@
     <string name="Update_end">endTime</string>
     <string name="Update_subject">subject</string>
     <string name="view_heading">All tasks</string>
+    <string name="timetable_dashboard">Timetable</string>
 
 </resources>
