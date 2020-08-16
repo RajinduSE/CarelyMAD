@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewAchievement"></activity>
+        <activity android:name=".Timetable_Dashboard"></activity>
+        <activity android:name=".ViewAchievement"/>
         <activity android:name=".ViewEducation" />
         <activity android:name=".GalleryDashboard" />
         <activity android:name=".RemoveAchievement" />
