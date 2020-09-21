@@ -1,26 +1,21 @@
 package com.example.caring;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
+import com.example.caring.adapters.MainDashboardAdapter;
 
 public class MainDashboard extends AppCompatActivity {
 
     ListView listView;
-
     String title[] = {"Education", "Health", "Achievements", "Time Table"};
-
     int image[] = {R.drawable.c, R.drawable.b, R.drawable.a, R.drawable.d};
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,33 +23,24 @@ public class MainDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_main_dashboard);
 
         listView = findViewById(R.id.list_view);
-        CustomAdaptor customAdaptor = new CustomAdaptor(this, title, image);
+        MainDashboardAdapter customAdaptor = new MainDashboardAdapter(this, title, image);
         listView.setAdapter(customAdaptor);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0 : startActivity(new Intent(context, EducationDashboard.class));
+                            break;
+                    case 1 : startActivity(new Intent(context, Dashboard.class));
+                            break;
+                    case 2 : startActivity(new Intent(context, GalleryDashboard.class));
+                            break;
+                    case 3 : startActivity(new Intent(context, MainDashboard.class));
+                            break;
+                }
+            }
+        });
     }
 }
 
-class CustomAdaptor extends ArrayAdapter<String> {
-    Context context;
-    int[] images;
-    String[] title;
-    CustomAdaptor(Context context, String[] title, int[] images){
-        super(context, R.layout.single_row_dashboard, R.id.title, title);
-        this.context = context;
-        this.images = images;
-        this.title = title;
-    }
-
-    //create a single row
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.single_row_dashboard, parent, false);
-        ImageView imageView = row.findViewById(R.id.imageView);
-        TextView titleView = row.findViewById(R.id.title);
-
-        imageView.setImageResource(images[position]);
-        titleView.setText(title[position]);
-        return row;
-    }
-}

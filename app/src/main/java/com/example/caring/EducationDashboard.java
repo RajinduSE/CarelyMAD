@@ -5,55 +5,52 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.caring.adapters.EducationDashboardAdapter;
+import com.example.caring.models.education.School;
+
 public class EducationDashboard extends AppCompatActivity {
 
     ListView listView;
-
     String title[] = {"School", "Subject", "Mark", "Change School", "Remove Grade"};
-
     int image[] = {R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_update_24, R.drawable.ic_baseline_delete_24};
+    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_education_dashboard);
 
         listView = findViewById(R.id.list_view);
-        CustomAdaptor3 customAdaptor = new CustomAdaptor3(this, title, image);
+        EducationDashboardAdapter customAdaptor = new EducationDashboardAdapter(this, title, image);
         listView.setAdapter(customAdaptor);
+        context = this;
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0 : startActivity(new Intent(context, Schools.class));
+                        break;
+                    case 1 : startActivity(new Intent(context, EducationDashboard.class));
+                        break;
+                    case 2 : startActivity(new Intent(context, MainDashboard.class));
+                        break;
+                    case 3 : startActivity(new Intent(context, Medics.class));
+                        break;
+                }
+            }
+        });
     }
 }
 
-class CustomAdaptor3 extends ArrayAdapter<String> {
-    Context context;
-    int[] images;
-    String[] title;
-    CustomAdaptor3(Context context, String[] title, int[] images){
-        super(context, R.layout.single_row_education_dashboard, R.id.title, title);
-        this.context = context;
-        this.images = images;
-        this.title = title;
-    }
-
-    //create a single row
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.single_row_education_dashboard, parent, false);
-        ImageView imageView = row.findViewById(R.id.imageView);
-        TextView titleView = row.findViewById(R.id.title);
-
-        imageView.setImageResource(images[position]);
-        titleView.setText(title[position]);
-        return row;
-    }
-}

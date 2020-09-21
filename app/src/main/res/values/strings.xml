@@ -100,5 +100,9 @@
     <string name="Update_end">endTime</string>
     <string name="Update_subject">subject</string>
     <string name="view_heading">All tasks</string>
+    <string name="schools_list">Schools</string>
+    <string name="add_school">ADD SCHOOL</string>
+    <string name="From">From</string>
+    <string name="To">To</string>
 
 </resources>

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewAchievement"></activity>
+        <activity android:name=".Schools"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".ViewAchievement" />
         <activity android:name=".ViewEducation" />
         <activity android:name=".GalleryDashboard" />
         <activity android:name=".RemoveAchievement" />
@@ -23,20 +25,16 @@
         <activity android:name=".InsertSubject" />
         <activity android:name=".MainDashboard" />
         <activity android:name=".InsertSchool" />
-
-        <activity android:name=".ViewHealth"></activity>
+        <activity android:name=".ViewHealth" />
         <activity android:name=".ViewVaccine" />
         <activity android:name=".ViewMedicine" />
         <activity android:name=".InsertHealth" />
         <activity android:name=".InjectionCourse" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Medics" />
-        
-        <activity android:name=".Update_Timetable"></activity>
+        <activity android:name=".Update_Timetable" />
         <activity android:name=".ViewTimetable" />
         <activity android:name=".Insert_Timetable" />
-        
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
