@@ -60,7 +60,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="70dp"
-        android:drawableStart="@drawable/ic_baseline_add_24"
+        android:drawableStart="@drawable/syringe"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Name"
