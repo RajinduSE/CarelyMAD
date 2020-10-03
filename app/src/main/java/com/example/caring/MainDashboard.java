@@ -34,9 +34,9 @@ public class MainDashboard extends AppCompatActivity {
                             break;
                     case 1 : startActivity(new Intent(context, Dashboard.class));
                             break;
-                    case 2 : startActivity(new Intent(context, GalleryDashboard.class));
+                    case 2 : startActivity(new Intent(context, ViewAchievement.class));
                             break;
-                    case 3 : startActivity(new Intent(context, MainDashboard.class));
+                    case 3 : startActivity(new Intent(context, ViewTimetable.class));
                             break;
                 }
             }

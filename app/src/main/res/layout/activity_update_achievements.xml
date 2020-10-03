@@ -9,7 +9,7 @@
     <View
         android:id="@+id/topView"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@color/purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,8 +18,8 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_width="417dp"
+        android:layout_height="70dp"
         android:background="@drawable/wave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,28 +32,30 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
         android:autofillHints="no"
-        android:text="@string/achievement_update"
+        android:text="@string/health_achievement"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/topView"
         app:layout_constraintEnd_toEndOf="@+id/topView"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/topView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintHorizontal_bias="0.909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/inputEvent"
+        android:id="@+id/editEvent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -61,15 +63,33 @@
         android:drawableStart="@drawable/ic_baseline_date_range_24"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/event_ex"
-        android:inputType="number"
-        android:textSize="20dp"
+        android:hint="@string/insert_event"
+        android:inputType="text"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <EditText
-        android:id="@+id/inputDescription"
+        android:id="@+id/editDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:drawableStart="@drawable/ic_baseline_date_range_24"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="@string/year"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAwards" />
+
+    <EditText
+        android:id="@+id/editDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -78,16 +98,16 @@
         android:drawableStart="@drawable/notepad"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/event_des"
-        android:inputType="number"
-        android:textSize="20dp"
+        android:hint="@string/insert_description2"
+        android:inputType="text"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEvent" />
+        app:layout_constraintTop_toBottomOf="@+id/editEvent" />
 
     <EditText
-        android:id="@+id/inputAwards"
+        android:id="@+id/editAwards"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -96,24 +116,28 @@
         android:drawableStart="@drawable/trophy"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/award_event"
-        android:inputType="number"
-        android:textSize="20dp"
+        android:hint="@string/insert_award"
+        android:inputType="text"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
 
     <Button
-        android:id="@+id/button8"
-        android:layout_width="200dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="32dp"
-        android:text="Update Achievement"
+        android:id="@+id/edit_achievement"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/round_button"
+        android:text="EDIT"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputAwards" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

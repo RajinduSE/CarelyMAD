@@ -10,7 +10,7 @@ public class GalleryDashboard extends AppCompatActivity {
 
     ListView listView;
 
-    String title[] = {"Achievement", "Gallery", "Update Achievement", "Delete Achievement"};
+    String title[] = {"AchievementModel", "Gallery", "Update AchievementModel", "Delete AchievementModel"};
 
     int image[] = {R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_image_24, R.drawable.ic_baseline_update_24, R.drawable.ic_baseline_delete_24};
     @Override

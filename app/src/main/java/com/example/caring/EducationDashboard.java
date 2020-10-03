@@ -22,8 +22,8 @@ import com.example.caring.models.education.School;
 public class EducationDashboard extends AppCompatActivity {
 
     ListView listView;
-    String title[] = {"School", "Subject", "Mark", "Change School", "Remove Grade"};
-    int image[] = {R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_update_24, R.drawable.ic_baseline_delete_24};
+    String title[] = {"School", "Progress"};
+    int image[] = {R.drawable.ic_baseline_cloud_upload_24, R.drawable.ic_baseline_update_24};
     Context context;
 
     @Override
@@ -42,12 +42,9 @@ public class EducationDashboard extends AppCompatActivity {
                 switch (i){
                     case 0 : startActivity(new Intent(context, Schools.class));
                         break;
-                    case 1 : startActivity(new Intent(context, EducationDashboard.class));
+                    case 1 : startActivity(new Intent(context, ViewEducation.class));
                         break;
-                    case 2 : startActivity(new Intent(context, MainDashboard.class));
-                        break;
-                    case 3 : startActivity(new Intent(context, Medics.class));
-                        break;
+
                 }
             }
         });

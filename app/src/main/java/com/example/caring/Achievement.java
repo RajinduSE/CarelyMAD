@@ -2,13 +2,61 @@ package com.example.caring;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.caring.dbHandlers.DbHandler;
+import com.example.caring.models.achievement.AchievementModel;
+import com.example.caring.models.education.School;
+
+import es.dmoral.toasty.Toasty;
 
 public class Achievement extends AppCompatActivity {
+    private EditText event;
+    private EditText description;
+    private EditText award;
+    private EditText year;
+    private Button add;
+    private Context context;
+    private DbHandler achievementDbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievement);
+
+        event = findViewById(R.id.inputEvent);
+        description = findViewById(R.id.inputDescription);
+        award = findViewById(R.id.inputAwards);
+        year = findViewById(R.id.inputDate);
+        add = findViewById(R.id.add_achievement);
+        context = this;
+        achievementDbHandler = new DbHandler(context);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userEvent = event.getText().toString();
+                String userDescription = description.getText().toString();
+                String userAward = award.getText().toString();
+                String userYear = year.getText().toString();
+
+                AchievementModel achievementModel = new AchievementModel(userEvent, userDescription, userAward, Integer.parseInt(userYear));
+                if(achievementDbHandler.addAchievement(achievementModel)){
+                    Toasty.success(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewAchievement.class));
+                }else{
+                    Toasty.error(getApplicationContext(), "Inserting Error", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, Achievement.class));
+                }
+            }
+        });
+
+
     }
 }

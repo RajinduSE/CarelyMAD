@@ -7,13 +7,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toolbar;
 
 import com.example.caring.adapters.education.SchoolAdapter;
-import com.example.caring.dbHandlers.education.SchoolDbHandler;
+import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.education.School;
 
 import java.util.ArrayList;
@@ -26,7 +30,7 @@ public class Schools extends AppCompatActivity {
     private Button add;
     private ListView listView;
     private Context context;
-    private SchoolDbHandler schoolDbHandler;
+    private DbHandler schoolDbHandler;
     private List<School> schools;
 
     @Override
@@ -37,7 +41,7 @@ public class Schools extends AppCompatActivity {
         add = findViewById(R.id.btnAddSchool);
         listView = findViewById(R.id.schoollist);
         context = this;
-        schoolDbHandler = new SchoolDbHandler(context);
+        schoolDbHandler = new DbHandler(context);
         schools = new ArrayList<School>();
 
         schools = schoolDbHandler.getAllSchools();
@@ -91,5 +95,24 @@ public class Schools extends AppCompatActivity {
             }
         });
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.dashboard:
+                startActivity(new Intent(this, MainDashboard.class));
+                return true;
+            case R.id.education:
+                startActivity(new Intent(this, EducationDashboard.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -1,51 +1,70 @@
 package com.example.caring;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.caring.dbHandlers.DbHandler;
+import com.example.caring.models.education.Mark;
+
+import es.dmoral.toasty.Toasty;
 
 public class InsertMarks extends AppCompatActivity {
-    ListView listView;
-    String title[] = {"Maths", "Sinhala", "English", "Tamil", "Religion", "ENV", "Dancing", "Music", "Art"};
+    private EditText grade;
+    private EditText term;
+    private EditText total;
+    private EditText subCount;
+    private Button btn;
+    private Context context;
+    private DbHandler markDbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_marks);
 
-        listView = findViewById(R.id.list_view);
-        CustomAdaptor2 customAdaptor = new CustomAdaptor2(this, title);
-        listView.setAdapter(customAdaptor);
+        grade = findViewById(R.id.insertGrade);
+        term = findViewById(R.id.insertTerm);
+        total = findViewById(R.id.insertTotal);
+        subCount = findViewById(R.id.insertSubCount);
+        btn = findViewById(R.id.insertBtn);
+        context = this;
+
+        grade.setEnabled(false);
+        term.setEnabled(false);
+
+        String userGrade = getIntent().getStringExtra("GRADE");
+        String userTerm = getIntent().getStringExtra("TERM");
+
+        grade.setText(userGrade);
+        term.setText(userTerm);
+
+        markDbHandler = new DbHandler(context);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int userGrade = Integer.parseInt(grade.getText().toString());
+                int userTerm = Integer.parseInt(term.getText().toString());
+                double userTotal = Double.valueOf(total.getText().toString());
+                int userSubCount = Integer.parseInt(subCount.getText().toString());
+
+                Mark mark = new Mark(userGrade, userTerm, userTotal, userSubCount);
+                if(markDbHandler.addMark(mark)){
+                    Toasty.success(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewEducation.class));
+                }else{
+                    Toasty.error(getApplicationContext(), "Inserting Error", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, InsertMarks.class));
+                }
+            }
+        });
     }
 }
 
-class CustomAdaptor2 extends ArrayAdapter<String> {
-    Context context;
-    String[] title;
-    CustomAdaptor2(Context context, String[] title){
-        super(context, R.layout.marks_single_subject, R.id.title, title);
-        this.context = context;
-        this.title = title;
-    }
-
-    //create a single row
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.marks_single_subject, parent, false);
-        TextView titleView = row.findViewById(R.id.title);
-
-        titleView.setText(title[position]);
-        return row;
-    }
-}

@@ -53,79 +53,37 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/update_date"
-        android:layout_width="0dp"
+        android:id="@+id/txtTitle"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_date_range_24"
-        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_date"
-        android:inputType="date"
-        android:textSize="24sp"
+        android:hint="Title"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <EditText
-        android:id="@+id/Update_startTime"
-        android:layout_width="0dp"
+        android:id="@+id/txtDescription"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/clock"
-        android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/Update_start"
-        android:inputType="time"
-        android:textSize="24sp"
+        android:hint="Description"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_date" />
-
-    <EditText
-        android:id="@+id/Update_end"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_access_time_24"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="@string/Update_end"
-        android:inputType="time"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_subject" />
-
-    <EditText
-        android:id="@+id/update_subject"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:drawableStart="@drawable/ic_baseline_post_add_24"
-        android:drawablePadding="16dp"
-        android:ems="10"
-        android:hint="@string/Update_subject"
-        android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Update_startTime" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
     <Button
-        android:id="@+id/timetable_Update_btn"
+        android:id="@+id/editTask"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
@@ -138,6 +96,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Update_end" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

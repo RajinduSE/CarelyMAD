@@ -100,9 +100,22 @@
     <string name="Update_end">endTime</string>
     <string name="Update_subject">subject</string>
     <string name="view_heading">All tasks</string>
+
     <string name="schools_list">Schools</string>
     <string name="add_school">ADD SCHOOL</string>
     <string name="From">From</string>
     <string name="To">To</string>
+    <string name="term">Term</string>
+    <string name="total">Total</string>
+    <string name="count">Total Subjects</string>
+    <string name="grade1">Grade 1</string>
+    <string name="grade2">Grade 2</string>
+    <string name="grade3">Grade 3</string>
+    <string name="grade4">Grade 4</string>
+    <string name="grade5">Grade 5</string>
+    <string name="grade6">Grade 6</string>
+    <string name="input_term">Enter the term</string>
+    <string name="year">Year</string>
+    <string name="achievements">Achievements</string>
 
 </resources>

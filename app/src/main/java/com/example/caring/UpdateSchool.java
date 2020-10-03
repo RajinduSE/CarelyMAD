@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.caring.dbHandlers.education.SchoolDbHandler;
+import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.education.School;
 
 import es.dmoral.toasty.Toasty;
@@ -21,7 +21,7 @@ public class UpdateSchool extends AppCompatActivity {
     private EditText from;
     private Button btn;
     private Context context;
-    private SchoolDbHandler schoolDbHandler;
+    private DbHandler schoolDbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class UpdateSchool extends AppCompatActivity {
         from = findViewById(R.id.editFrom);
         btn = findViewById(R.id.editBtn);
         context = this;
-        schoolDbHandler = new SchoolDbHandler(context);
+        schoolDbHandler = new DbHandler(context);
 
         final String id = getIntent().getStringExtra("id");
         School school = schoolDbHandler.getSingleSchool(Integer.parseInt(id));

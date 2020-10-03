@@ -54,161 +54,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="539dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="191dp">
+    <ListView
+        android:id="@+id/vaccinelist"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="95dp"
-                android:layout_height="38dp"
-                android:text="Vaccine"
-                android:textSize="24sp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="16dp" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="95dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="BCG"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView13"
-                tools:layout_editor_absoluteX="16dp" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="95dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="Rubella"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView18"
-                tools:layout_editor_absoluteX="16dp" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="95dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="ATD"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView20"
-                tools:layout_editor_absoluteX="16dp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:text="1"
-                android:textSize="24sp"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="145dp" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="1m"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                tools:layout_editor_absoluteX="145dp" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="1m"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView19"
-                tools:layout_editor_absoluteX="145dp" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginTop="16dp"
-                android:text="6y"
-                android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/textView21"
-                tools:layout_editor_absoluteX="145dp" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="6y"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:text="2"
-                android:textSize="24sp"
-                app:layout_constraintStart_toEndOf="@+id/textView14"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:text="3"
-                android:textSize="24sp"
-                app:layout_constraintStart_toEndOf="@+id/textView15"
-                app:layout_constraintTop_toTopOf="@+id/textView15" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="52dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="8dp"
-                android:text="4"
-                android:textSize="24sp"
-                app:layout_constraintStart_toEndOf="@+id/textView16"
-                app:layout_constraintTop_toTopOf="@+id/textView15" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="168dp"
-                android:background="@drawable/round_button"
-                android:text="Delete"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="229dp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/round_button"
-                android:text="Update"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button2"
-                tools:layout_editor_absoluteY="229dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <Button
+        android:id="@+id/btnAddVaccine"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/round_button"
+        android:text="ADD Vaccine"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinelist"
+        app:layout_constraintVertical_bias="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

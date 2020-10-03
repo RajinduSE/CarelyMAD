@@ -7,7 +7,7 @@
     tools:context=".Achievement">
 
     <Button
-        android:id="@+id/health_add_achievement"
+        android:id="@+id/add_achievement"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -80,7 +80,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/insert_event"
-        android:inputType="number"
+        android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         android:drawableStart="@drawable/ic_baseline_date_range_24"
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="@string/insert_date2"
+        android:hint="@string/year"
         android:inputType="number"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +115,7 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/insert_description2"
-        android:inputType="number"
+        android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -133,23 +133,12 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="@string/insert_award"
-        android:inputType="number"
+        android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputDescription" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="171dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="24dp"
-        android:drawableStart="@drawable/ic_baseline_arrow_upward_24"
-        android:text="Upload Photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/health_add_achievement" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
