@@ -1,7 +1,7 @@
 package com.example.caring.models.health;
 
 public class Health {
-    private int  healthId;
+    private int healthId;
     private double weight;
     private double height;
     private String doctor;
