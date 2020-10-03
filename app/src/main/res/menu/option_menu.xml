@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/dashboard"
+        android:title="Dashboard" />
+    <item android:id="@+id/education"
+        android:title="Education" />
+    <item android:id="@+id/health"
+        android:title="Health" />
+    <item android:id="@+id/achievement"
+        android:title="Achievement" />
+    <item android:id="@+id/timeTable"
+        android:title="Time Table" />
+
+
+</menu>
