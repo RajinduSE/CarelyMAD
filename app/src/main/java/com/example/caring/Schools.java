@@ -111,6 +111,15 @@ public class Schools extends AppCompatActivity {
             case R.id.education:
                 startActivity(new Intent(this, EducationDashboard.class));
                 return true;
+            case R.id.health:
+                startActivity(new Intent(this, Dashboard.class));
+                return true;
+            case R.id.achievement:
+                startActivity(new Intent(this, ViewAchievement.class));
+                return true;
+            case R.id.timeTable:
+                startActivity(new Intent(this, ViewTimetable.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
