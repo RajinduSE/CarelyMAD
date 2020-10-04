@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.task.Task;
+
+import es.dmoral.toasty.Toasty;
 
 public class Update_Timetable extends AppCompatActivity {
 
@@ -46,7 +49,15 @@ public class Update_Timetable extends AppCompatActivity {
                 Task task = new Task(Integer.parseInt(id) , editTitle, editDescription, updateDate, 0);
                 int state = dbHandler.updateSingleTask(task);
 
-                startActivity(new Intent(context, ViewTimetable.class));
+                if(state > 0){
+                    Toasty.success(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewTimetable.class));
+                }else{
+                    Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewTimetable.class));
+                }
+
+
             }
         });
     }
