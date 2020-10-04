@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -44,5 +47,33 @@ public class ViewMedicine extends AppCompatActivity {
                 startActivity(new Intent(context, All_medicine.class));
             }
         });
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.dashboard:
+                startActivity(new Intent(this, MainDashboard.class));
+                return true;
+            case R.id.education:
+                startActivity(new Intent(this, EducationDashboard.class));
+                return true;
+            case R.id.health:
+                startActivity(new Intent(this, Dashboard.class));
+                return true;
+            case R.id.achievement:
+                startActivity(new Intent(this, ViewAchievement.class));
+                return true;
+            case R.id.timeTable:
+                startActivity(new Intent(this, ViewTimetable.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
