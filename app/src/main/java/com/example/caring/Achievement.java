@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,4 +60,26 @@ public class Achievement extends AppCompatActivity {
 
 
     }
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.dashboard:
+                startActivity(new Intent(this, MainDashboard.class));
+                return true;
+            case R.id.education:
+                startActivity(new Intent(this, EducationDashboard.class));
+                return true;
+            case R.id.health:
+                startActivity(new Intent(this, Dashboard.class));
+                return true;
+            case R.id.achievement:
+                startActivity(new Intent(this, ViewAchievement.class));
+                return true;
+            case R.id.timeTable:
+                startActivity(new Intent(this, ViewTimetable.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }
