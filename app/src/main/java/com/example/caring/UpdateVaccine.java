@@ -51,6 +51,13 @@ public class UpdateVaccine extends AppCompatActivity {
 
                 Vaccine vaccine = new Vaccine(Integer.parseInt(id), editedName, editedAge);
                 int state = vaccineDbHandler.updateVaccine(vaccine);
+                if(state > 0){
+                    Toasty.success(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewVaccine.class));
+                }else {
+                    Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(context, ViewVaccine.class));
+                }
 
             }
         });
