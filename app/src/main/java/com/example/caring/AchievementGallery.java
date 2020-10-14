@@ -11,7 +11,7 @@ import com.example.caring.adapters.AchievementGalleryDashboardAdapter;
 
 public class AchievementGallery extends AppCompatActivity {
     ListView listView;
-    String title[] = {"Sportmeet 2019", "Prize giving 2020"};
+    String title[] = {"Sportsmeet 2019", "Prize giving 2020"};
     int image[] = {R.drawable.galley, R.drawable.gallery2};
 
     @Override
