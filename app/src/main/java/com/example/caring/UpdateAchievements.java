@@ -59,7 +59,7 @@ public class UpdateAchievements extends AppCompatActivity {
                 AchievementModel achievementModel = new AchievementModel(Integer.parseInt(id), editedEvent, editedDescription, editedAward, Integer.parseInt(editedYear));
                 int state = achievementDbHandler.updateSingleAchievement(achievementModel);
                 if(state > 0){
-                    Toasty.success(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                    Toasty.success(getApplicationContext(), "Successfully", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, ViewAchievement.class));
                 }else {
                     Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
