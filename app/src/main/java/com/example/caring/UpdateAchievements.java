@@ -62,7 +62,7 @@ public class UpdateAchievements extends AppCompatActivity {
                     Toasty.success(getApplicationContext(), "Successfully Updated!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, ViewAchievement.class));
                 }else {
-                    Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
+                    Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, ViewAchievement.class));
                 }
             }
