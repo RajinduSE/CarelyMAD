@@ -58,7 +58,7 @@ public class Login extends AppCompatActivity {
                     startActivity(new Intent(context, MainDashboard.class));
                 }else{
                     Toasty.error(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, MainDashboard.class));
+                    startActivity(new Intent(context, Login.class));
                 }
             }
         });
