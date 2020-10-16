@@ -57,20 +57,22 @@ public class Register extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            if(awesomeValidation.validate()) {
                 String input_username = username.getText().toString();
                 String input_password = password.getText().toString();
 
                 User user = new User(input_username, input_password);
                 boolean status = userDb.addUser(user);
 
-                if(status){
+                if (status) {
                     Toasty.success(getApplicationContext(), "User Added", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, Login.class));
-                }else {
+                } else {
                     Toasty.error(getApplicationContext(), "Failed", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, Register.class));
                 }
+            }
+
 
             }
         });
