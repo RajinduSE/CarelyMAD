@@ -25,6 +25,7 @@ public class Update_Timetable extends AppCompatActivity {
     private DbHandler dbHandler;
     private Context context;
     private Long updateDate;
+    private Long p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

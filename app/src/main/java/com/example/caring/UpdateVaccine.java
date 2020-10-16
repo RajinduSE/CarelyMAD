@@ -58,6 +58,7 @@ public class UpdateVaccine extends AppCompatActivity {
                     Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, ViewVaccine.class));
                 }
+
             }
         });
     }

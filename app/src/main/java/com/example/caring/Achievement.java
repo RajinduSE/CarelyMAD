@@ -51,10 +51,10 @@ public class Achievement extends AppCompatActivity {
 
                 AchievementModel achievementModel = new AchievementModel(userEvent, userDescription, userAward, Integer.parseInt(userYear));
                 if(achievementDbHandler.addAchievement(achievementModel)){
-                    Toasty.success(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                    Toasty.success(getApplicationContext(), "Successfully Added", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, ViewAchievement.class));
                 }else{
-                    Toasty.error(getApplicationContext(), "Inserting Error", Toast.LENGTH_LONG).show();
+                    Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(context, Achievement.class));
                 }
             }
