@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.User;
 
@@ -23,6 +26,7 @@ public class Register extends AppCompatActivity {
     private TextView textView;
     private Context context;
     private DbHandler userDb;
+    AwesomeValidation awesomeValidation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,17 @@ public class Register extends AppCompatActivity {
         context = this;
         userDb = new DbHandler(context);
 
+        //Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+
+
+        //Add validations
+        awesomeValidation.addValidation(this,R.id.insertEmail, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.insertPassoword, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
+
+
         User user = userDb.getSingleUser();
         if(user != null){
             startActivity(new Intent(context, Login.class));
@@ -42,6 +57,7 @@ public class Register extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String input_username = username.getText().toString();
                 String input_password = password.getText().toString();
 

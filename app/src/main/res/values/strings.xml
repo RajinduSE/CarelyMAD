@@ -117,5 +117,6 @@
     <string name="input_term">Enter the term</string>
     <string name="year">Year</string>
     <string name="achievements">Achievements</string>
+    <string name="invalid_input">Fill this feilds</string>
 
 </resources>

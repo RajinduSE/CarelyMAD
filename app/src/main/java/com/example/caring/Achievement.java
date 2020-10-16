@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.achievement.AchievementModel;
 import com.example.caring.models.education.School;
@@ -25,6 +28,7 @@ public class Achievement extends AppCompatActivity {
     private Button add;
     private Context context;
     private DbHandler achievementDbHandler;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +43,32 @@ public class Achievement extends AppCompatActivity {
         context = this;
         achievementDbHandler = new DbHandler(context);
 
+        //Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //Add validations
+        awesomeValidation.addValidation(this,R.id.inputEvent, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.inputDescription, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.inputAwards, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.inputDate, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userEvent = event.getText().toString();
-                String userDescription = description.getText().toString();
-                String userAward = award.getText().toString();
-                String userYear = year.getText().toString();
+                if(awesomeValidation.validate()) {
+                    String userEvent = event.getText().toString();
+                    String userDescription = description.getText().toString();
+                    String userAward = award.getText().toString();
+                    String userYear = year.getText().toString();
 
-                AchievementModel achievementModel = new AchievementModel(userEvent, userDescription, userAward, Integer.parseInt(userYear));
-                if(achievementDbHandler.addAchievement(achievementModel)){
-                    Toasty.success(getApplicationContext(), "Successfully Added", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewAchievement.class));
-                }else{
-                    Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, Achievement.class));
+                    AchievementModel achievementModel = new AchievementModel(userEvent, userDescription, userAward, Integer.parseInt(userYear));
+                    if (achievementDbHandler.addAchievement(achievementModel)) {
+                        Toasty.success(getApplicationContext(), "Successfully Added", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewAchievement.class));
+                    } else {
+                        Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, Achievement.class));
+                    }
                 }
             }
         });

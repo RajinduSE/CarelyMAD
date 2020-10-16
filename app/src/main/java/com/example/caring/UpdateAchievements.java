@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.achievement.AchievementModel;
 import com.example.caring.models.education.School;
@@ -25,6 +28,7 @@ public class UpdateAchievements extends AppCompatActivity {
     private Button btn;
     private Context context;
     private DbHandler achievementDbHandler;
+    AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,22 +52,35 @@ public class UpdateAchievements extends AppCompatActivity {
         award.setText(achievementModel.getAward());
         year.setText(String.valueOf(achievementModel.getYear()));
 
+        //Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+
+        //Add validations
+        awesomeValidation.addValidation(this,R.id.editEvent, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.editDescription, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.editAwards, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+        awesomeValidation.addValidation(this,R.id.editDate, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
+
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String editedEvent =  event.getText().toString();
-                String editedDescription = description.getText().toString();
-                String editedAward = award.getText().toString();
-                String editedYear = year.getText().toString();
+                if(awesomeValidation.validate()) {
+                    String editedEvent = event.getText().toString();
+                    String editedDescription = description.getText().toString();
+                    String editedAward = award.getText().toString();
+                    String editedYear = year.getText().toString();
 
-                AchievementModel achievementModel = new AchievementModel(Integer.parseInt(id), editedEvent, editedDescription, editedAward, Integer.parseInt(editedYear));
-                int state = achievementDbHandler.updateSingleAchievement(achievementModel);
-                if(state > 0){
-                    Toasty.success(getApplicationContext(), "Successfully Updated!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewAchievement.class));
-                }else {
-                    Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewAchievement.class));
+                    AchievementModel achievementModel = new AchievementModel(Integer.parseInt(id), editedEvent, editedDescription, editedAward, Integer.parseInt(editedYear));
+                    int state = achievementDbHandler.updateSingleAchievement(achievementModel);
+                    if (state > 0) {
+                        Toasty.success(getApplicationContext(), "Successfully Updated!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewAchievement.class));
+                    } else {
+                        Toasty.error(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewAchievement.class));
+                    }
                 }
             }
         });
