@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.task.Task;
 
@@ -26,6 +29,7 @@ public class Update_Timetable extends AppCompatActivity {
     private Context context;
     private Long updateDate;
     private Long p;
+    AwesomeValidation awesomeValidation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,13 @@ public class Update_Timetable extends AppCompatActivity {
         context = this;
         dbHandler = new DbHandler(context);
 
+        //Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        //Add validations
+        awesomeValidation.addValidation(this,R.id.txtTitle, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
+        awesomeValidation.addValidation(this,R.id.txtDescription, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
         final String id = getIntent().getStringExtra("id");
         Task task = dbHandler.getSingleTask(Integer.parseInt(id));
 
@@ -46,22 +57,23 @@ public class Update_Timetable extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String editTitle = title.getText().toString();
-                String editDescription = description.getText().toString();
-                updateDate = System.currentTimeMillis();
+                if(awesomeValidation.validate()) {
+                    String editTitle = title.getText().toString();
+                    String editDescription = description.getText().toString();
+                    updateDate = System.currentTimeMillis();
 
-                Task task = new Task(Integer.parseInt(id) , editTitle, editDescription, updateDate, 0);
-                int state = dbHandler.updateSingleTask(task);
+                    Task task = new Task(Integer.parseInt(id), editTitle, editDescription, updateDate, 0);
+                    int state = dbHandler.updateSingleTask(task);
 
-                if(state > 0){
-                    Toasty.success(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewTimetable.class));
-                }else{
-                    Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewTimetable.class));
+                    if (state > 0) {
+                        Toasty.success(getApplicationContext(), "Updated Successfully", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewTimetable.class));
+                    } else {
+                        Toasty.error(getApplicationContext(), "Updating Error", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewTimetable.class));
+                    }
+
                 }
-
-
             }
         });
     }

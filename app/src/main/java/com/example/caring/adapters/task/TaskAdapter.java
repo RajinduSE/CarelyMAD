@@ -16,7 +16,9 @@ import com.example.caring.models.task.Task;
 
 import java.util.List;
 
-public class TaskAdapter extends ArrayAdapter<Task> {
+public class
+
+TaskAdapter extends ArrayAdapter<Task> {
     private Context context;
     private int resource;
     List<Task> tasks;

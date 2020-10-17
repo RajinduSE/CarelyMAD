@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.example.caring.dbHandlers.DbHandler;
 import com.example.caring.models.task.Task;
 
@@ -24,6 +27,8 @@ public class Insert_Timetable extends AppCompatActivity {
     private Button button;
     private DbHandler dbHandler;
     Context context;
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,23 +41,35 @@ public class Insert_Timetable extends AppCompatActivity {
 
         dbHandler = new DbHandler(context);
 
+        //Validation Style
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        //Add validations
+
+        awesomeValidation.addValidation(this,R.id.txtTitle, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
+        awesomeValidation.addValidation(this,R.id.txtDescription, RegexTemplate.NOT_EMPTY,R.string.invalid_input);
+
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(awesomeValidation.validate()) {
                 String userTitle = title.getText().toString();
                 String userDescription = description.getText().toString();
 
-                long started = System.currentTimeMillis();
 
-                Task task = new Task(userTitle, userDescription, started, 0);
-                if(dbHandler.addTask(task)){
-                    Toasty.success(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewTimetable.class));
-                }else {
-                    Toasty.error(getApplicationContext(), "Inserting Error", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(context, ViewTimetable.class));
+                    long started = System.currentTimeMillis();
+
+                    Task task = new Task(userTitle, userDescription, started, 0);
+                    if (dbHandler.addTask(task)) {
+                        Toasty.success(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewTimetable.class));
+                    } else {
+                        Toasty.error(getApplicationContext(), "Inserting Error", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(context, ViewTimetable.class));
+                    }
                 }
-
             }
         });
     }
